@@ -3,7 +3,7 @@ const {MessageEmbed} = require("discord.js");
 const {Delivery} = require("../delivery");
 
 module.exports = {
-    name: 'message',
+    name: 'messageCreate',
     once: false,
     async execute(client, message) {
 

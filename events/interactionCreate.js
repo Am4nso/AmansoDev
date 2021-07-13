@@ -4,7 +4,7 @@ const paypal = require("../paypal");
 const {MessageEmbed} = require("discord.js");
 
 module.exports = {
-    name: 'interaction',
+    name: 'interactionCreate',
     once: false,
     async execute(client, interaction) {
         if (interaction.isCommand()) {
@@ -34,7 +34,7 @@ module.exports = {
 
             const orderChannel = await interaction.guild.channels.create(`order-${orderId}`, {
                 topic: topic,
-                permissionOverwrites: [{id: interaction.user.id, allow: ["VIEW_CHANNEL"]}],
+                permissionOverwrites: [{id: interaction.user.id, allow: ["VIEW_CHANNEL"]}, {id: interaction.guild.roles.everyone.id, deny: ["VIEW_CHANNEL"]}],
                 parent: interaction.guild.channels.cache.get(STATUS_LIST.NEW)
             });
 

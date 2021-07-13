@@ -20,10 +20,12 @@ module.exports = {
             return;
         }
 
-        const delivery = await Delivery.fetch(deliveryId);
+        let delivery;
 
-        if (delivery === undefined) {
-            await interaction.reply({content: "No deliveries found with this id.", ephemeral: true});
+        try {
+            delivery = await Delivery.fetch(deliveryId);
+        } catch (e) {
+            await interaction.reply({content: "No delivery with this id was found.", ephemeral: true});
             return;
         }
 

@@ -45,6 +45,10 @@ class Delivery {
 
         const document = await COLLECTION.findOne({id: parseInt(deliveryId)});
 
+        if (document.count === 0) {
+            throw new DeliveryNotFound("No delivery with an id " + deliveryId + " was found.");
+        }
+
         const delivery = new Delivery(document.id, document.data);
 
         this.cache[document.id.toString()] = delivery;
@@ -62,5 +66,7 @@ class Delivery {
     }
 }
 
+class DeliveryNotFound extends Error { /* ... */
+}
 
 module.exports.Delivery = Delivery;

@@ -4,6 +4,8 @@ module.exports = {
 
         let data = interaction.options.get("data");
 
+        console.log(data.value)
+
         let command;
 
         try {

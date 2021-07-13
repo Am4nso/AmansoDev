@@ -40,7 +40,7 @@ module.exports = {
         const thread = new MessageButton()
             .setLabel('Thread')
             .setStyle('LINK')
-            .setURL('https://www.mc-market.org/members/67503/');
+            .setURL('https://www.mc-market.org/threads/671193/');
 
         await interaction.channel.send({
             content: `<@${order.clientID}>`,

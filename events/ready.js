@@ -18,7 +18,7 @@ module.exports = {
             Order.lastOrderId = doc.id;
         });
 
-        const documents = ordersCol.find({status: {$in: [0, 1, 2, 3]}});
+        const documents = ordersCol.find({status: {$ne: 5}});
 
         await documents.forEach((doc) => {
             client.orders.set(doc.channel, new Order(doc));

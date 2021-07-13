@@ -11,8 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "discord.js": "^13.0.0-dev.941cd86.1625141252",
+    "discord.js": "^13.0.0-dev.7e30011.1625338909",
     "moment": "^2.29.1",
-    "mongodb": "^3.6.9"
+    "mongodb": "^3.6.9",
+    "mysql2": "^2.2.5"
   }
 }
